@@ -1,6 +1,6 @@
 services:
 - type: pserv
-  repo: https://github.com/Rvey/agent-deployment
+  # repo: https://github.com/Rvey/agent-deployment
 
   # Change this to the path containing your Dockerfile
   rootDir: .
