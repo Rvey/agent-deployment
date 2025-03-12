@@ -5,7 +5,9 @@ services:
   # Change this to the path containing your Dockerfile
   rootDir: .
 
-  name: rvey/live-chat-backend:v1
+  name: agent-liveKit
+  image:
+    url: rvey/live-chat-backend:v1
   runtime: image
 
   # Free plan is not available for private services
