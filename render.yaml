@@ -25,7 +25,7 @@ services:
   # Sane defaults
   scaling:
     minInstances: 1
-    maxInstances: 4
+    maxInstances: 1
     targetCPUPercent: 60
     targetMemoryPercent: 60
 version: "1"
