@@ -3,7 +3,7 @@ services:
   repo: https://github.com/Rvey/agent-deployment
 
   # Change this to the path containing your Dockerfile
-  rootDir: python-agent-example-app
+  rootDir: .
 
   name: rvey/live-chat-backend:v1
   runtime: image
