@@ -41,7 +41,7 @@ async def entrypoint(ctx: JobContext):
     initial_ctx = llm.ChatContext().append(
         role="system",
         text=(
-            """you are a helpful assistant"""
+            participant_attributes.get("prompt")
         ),
     )
     # wake_word_handler = WakeWordHandler(
@@ -128,7 +128,8 @@ async def entrypoint(ctx: JobContext):
     agent.start(ctx.room, participant)
 
     # The agent should be polite and greet the user when it joins :)
-    await agent.say(participant_attributes.get("intro"), allow_interruptions=True)
+    if participant_attributes.get("intro"):
+        await agent.say(participant_attributes.get("intro"), allow_interruptions=True)
 
 
 if __name__ == "__main__":
