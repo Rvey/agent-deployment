@@ -38,12 +38,7 @@ async def _forward_transcription(
             print(" -> ", ev.alternatives[0].text)
 
 async def entrypoint(ctx: JobContext):
-    initial_ctx = llm.ChatContext().append(
-        role="system",
-        text=(
-            participant_attributes.get("prompt")
-        ),
-    )
+    
     # wake_word_handler = WakeWordHandler(
     #     wake_word="Hey, showy!",
     #     # notification_sound_path="path/to/sound.wav"
@@ -85,6 +80,12 @@ async def entrypoint(ctx: JobContext):
     # Wait for the first participant to connect
     participant = await ctx.wait_for_participant()
     participant_attributes = participant.attributes
+    initial_ctx = llm.ChatContext().append(
+        role="system",
+        text=(
+            participant_attributes.get("prompt")
+        ),
+    )
     logger.info(f"connecting to room {participant.attributes.get('room_name')}")
 
     # initialize the AssistantFnc class and pass it to the VoicePipelineAgent
