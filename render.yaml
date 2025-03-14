@@ -7,7 +7,7 @@ services:
 
   name: agent-liveKit
   image:
-    url: rvey/live-chat-backend:v5
+    url: rvey/live-chat-backend:v6
   runtime: image
 
   # Free plan is not available for private services
